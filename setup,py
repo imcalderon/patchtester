@@ -1,0 +1,25 @@
+from setuptools import setup, find_packages
+
+setup(
+    name='patchtester',  
+    version='1.0.0',
+    description='A tool to test requested perforce integrations for conflicts.',
+    author='Your Name',
+    author_email='your.email@example.com',
+    packages=find_packages(exclude=['test*']),
+    entry_points={
+        'console_scripts': [
+            'patchtester = patchtester.__main__:main']
+    },
+    install_requires=[
+       'anytree',
+       'p4python>=2018.2.1743033',
+       'pyyaml',
+       'jinja2'
+    ],
+    include_package_data=True,
+    package_data={
+        'patchtester': ['data/*.tmpl'],
+    },
+    python_requires='>=3.6',
+)
